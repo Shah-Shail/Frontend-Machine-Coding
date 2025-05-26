@@ -1,5 +1,11 @@
+import CarouselDemo from "./WithLibrary/1-carousel/CarouselDemo";
+
 function App() {
-  return <h1>Machine Coding</h1>;
+  return (
+    <>
+      <CarouselDemo />
+    </>
+  );
 }
 
 export default App;
