@@ -22,15 +22,17 @@ function Carousel({
 
   const goToPrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? imageLimit - 1 : prevIndex - 1
+      prevIndex === 0 ? imageLimit - imgPerSlide : prevIndex - 1
     );
   };
   const goToNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === imageLimit - 1 ? 0 : prevIndex + 1
+      prevIndex === imageLimit - imgPerSlide ? 0 : prevIndex + 1
     );
   };
-  console.log("imgWidth", currentIndex * imgWidth);
+  // console.log("currentIndex", currentIndex);
+  // console.log("imgWidth", imgWidth);
+
   return isLoading ? (
     <div>Loading...</div>
   ) : (
@@ -48,10 +50,7 @@ function Carousel({
             return (
               <img
                 onLoad={() => {
-                  console.log(
-                    "imgRef?.current?.offsetWidth",
-                    imgRef?.current?.offsetWidth
-                  );
+                  // console.log("imgRef?.current?.offsetWidth", imgRef);
                   setImgWidth(imgRef?.current?.offsetWidth);
                 }}
                 ref={imgRef}

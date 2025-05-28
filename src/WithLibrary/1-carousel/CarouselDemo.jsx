@@ -5,6 +5,7 @@ import "./carousel.css";
 function CarouselDemo() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const imgLimit = 8;
 
   const fetchImages = async (imageLimit) => {
     setLoading(true);
@@ -16,14 +17,14 @@ function CarouselDemo() {
       const data = await response.json();
       setImages(data);
     } catch (error) {
-      console.log("Error fetchin images", error);
+      console.log("Error fetching images", error);
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchImages(4);
+    fetchImages(imgLimit);
   }, []);
 
   return (
@@ -32,8 +33,8 @@ function CarouselDemo() {
         images={images}
         isLoading={loading}
         // onImageClick={(image, index) => {}}
-        imgPerSlide={1}
-        imageLimit={4}
+        imgPerSlide={3}
+        imageLimit={imgLimit}
         customPrevButton={(onClick) => (
           <button
             className="btn prev"
