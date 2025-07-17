@@ -1,11 +1,5 @@
-import CarouselDemo from "./WithLibrary/1-carousel/CarouselDemo";
+import InputSearch from "./WithLibrary/2-input-search";
 
-function App() {
-  return (
-    <>
-      <CarouselDemo />
-    </>
-  );
+export default function App() {
+  return <InputSearch />;
 }
-
-export default App;
