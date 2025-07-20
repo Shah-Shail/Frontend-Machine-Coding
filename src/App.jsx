@@ -1,5 +1,5 @@
-import InputSearch from "./WithLibrary/2-input-search";
+import DarkLigthMode from "./WithLibrary/4-dark-light-mode/DarkLigthMode";
 
 export default function App() {
-  return <InputSearch />;
+  return <DarkLigthMode />;
 }
